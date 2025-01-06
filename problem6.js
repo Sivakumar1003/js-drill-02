@@ -1,9 +1,8 @@
+// function to get all users first hobby.
 function firstHobby(arrayOfObjects) {
-    let hobby = [];
-    for(let details of arrayOfObjects) {
-        hobby.push(details.hobbies[0]);
-    }
-    return hobby;
+    return arrayOfObjects.map((user) => {
+        return user["hobbies"][0];
+    });
 }
 
 module.exports = firstHobby;
