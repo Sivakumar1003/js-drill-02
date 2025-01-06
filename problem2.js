@@ -1,13 +1,13 @@
+// function to get hobbies at particular age.
 function getHobbiesByAge(arrayOfObjects, age) {
-    let hobbies = [];
-    for(let details of arrayOfObjects) {
-        if(details.age === age) {
-            for(let index=0; index<details.hobbies.length; index++) {
-                hobbies.push(details.hobbies[index]);
-            }
-        }
-    }
-    return hobbies;
+    return arrayOfObjects.filter(user => {
+        return user.age === age;
+    })
+    .map((user) => {
+        return user["hobbies"];
+    })
+    .flat();
+
 }
 
 module.exports = getHobbiesByAge;
