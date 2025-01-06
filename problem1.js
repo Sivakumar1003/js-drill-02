@@ -1,10 +1,8 @@
+// function to get all email.
 function getAllEmail(arrayOfObjects) {
-    const allEmail = [];
-
-    for(let details of arrayOfObjects) {
-        allEmail.push(details.email);
-    }
-    return allEmail;
+    return arrayOfObjects.map(user => {
+        return user["email"];
+    });
 }
 
 module.exports = getAllEmail;
