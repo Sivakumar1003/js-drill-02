@@ -1,11 +1,8 @@
+// function to get all city and country.
 function getCityAndCountry(arrayOfObjects) {
-    let cityAndCountry = [];
-    for(let details of arrayOfObjects) {
-        let result = [details.city];
-        result.push(details.country);
-        cityAndCountry.push(result);
-    }
-    return cityAndCountry;
+    return arrayOfObjects.map((user) => {
+        return [user["city"], user["country"]];
+    });
 }
 
 module.exports = getCityAndCountry;
