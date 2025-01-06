@@ -1,11 +1,10 @@
+// function to get students who all are in Australia.
 function studentsInAustralia(arrayOfObjects) {
-    let student = [];
-
-    for(let details of arrayOfObjects) {
-        if(details.isStudent && details.country == "Australia") {
-            student.push(details.name);
-        }
-    }
-    return student;
+    return arrayOfObjects.filter(user => {
+        return user.isStudent && user["country"] === 'Australia';
+    })
+    .map((user) => {
+        return user["name"];
+    });
 }
 module.exports = studentsInAustralia;
